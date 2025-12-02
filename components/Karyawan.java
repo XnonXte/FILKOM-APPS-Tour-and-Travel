@@ -7,11 +7,15 @@ public class Karyawan {
     public boolean jenisKelamin;
     public String kategori;
 
-    public Karyawan(){
-        
+    public Karyawan() {
+        this.nama = "";
+        this.alamat = "";
+        this.jenisKelamin = true; 
+        this.kategori = "";
+        this.noTelp = "";
     }
 
-    public Karyawan(String nama, String alamat, boolean jenisKelamin, String kategori, String noTelp, int id) {
+    public Karyawan(String nama, String alamat, boolean jenisKelamin, String kategori, String noTelp) {
         this.nama = nama;
         this.alamat = alamat;
         this.jenisKelamin = jenisKelamin;
@@ -22,16 +26,19 @@ public class Karyawan {
     public String getAlamat() {
         return alamat;
     }
-    
+
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
-    public void cetakData() {
-        System.out.printf("Nama: %s\n", nama);
-        System.out.printf("Alamat: %s\n", alamat);
-        System.out.printf("No Telp: %s\n", noTelp);
-        System.out.printf("Jenis Kelamin: %s\n", jenisKelamin ? "Laki-laki" : "Perempuan");
-        System.out.printf("Kategori: %s\n", kategori);
+
+    public void cetakData(int urutan) {
+        System.out.printf(
+                "| %-2d | %-12s | %-12s | %-10s | %-14s | %-9s |\n",
+                urutan,
+                nama,
+                alamat,
+                noTelp,
+                jenisKelamin ? "Laki-Laki" : "Perempuan",
+                kategori);
     }
 }
