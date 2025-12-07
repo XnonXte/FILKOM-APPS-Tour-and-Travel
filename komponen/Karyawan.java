@@ -1,24 +1,24 @@
-package components;
+package komponen;
 
 public class Karyawan {
     public String nama;
     private String alamat;
     public String noTelp;
-    public boolean jenisKelamin;
+    public String jenisKelamin;
     public String kategori;
 
     public Karyawan() {
         this.nama = "";
         this.alamat = "";
-        this.jenisKelamin = true; 
+        this.jenisKelamin = "";
         this.kategori = "";
         this.noTelp = "";
     }
 
-    public Karyawan(String nama, String alamat, boolean jenisKelamin, String kategori, String noTelp) {
+    public Karyawan(String nama, String alamat, String jenisKelamin, String kategori, String noTelp) {
         this.nama = nama;
         this.alamat = alamat;
-        this.jenisKelamin = jenisKelamin;
+        this.jenisKelamin = jenisKelamin == null ? "" : jenisKelamin;
         this.kategori = kategori;
         this.noTelp = noTelp;
     }
@@ -38,7 +38,7 @@ public class Karyawan {
                 nama,
                 alamat,
                 noTelp,
-                jenisKelamin ? "Laki-Laki" : "Perempuan",
+                (jenisKelamin == null || jenisKelamin.equals("") ? "" : jenisKelamin),
                 kategori);
     }
 }

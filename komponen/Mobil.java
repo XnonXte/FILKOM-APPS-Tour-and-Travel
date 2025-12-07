@@ -1,4 +1,4 @@
-package components;
+package komponen;
 
 public class Mobil {
     private String noPlat;

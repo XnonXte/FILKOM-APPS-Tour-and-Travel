@@ -1,6 +1,6 @@
-package applications;
+package aplikasi;
 
-import components.Mobil;
+import komponen.Mobil;
 
 public class CRUDMobil {
     public int jumlahMobil;
