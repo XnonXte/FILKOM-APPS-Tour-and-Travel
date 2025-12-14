@@ -30,7 +30,6 @@ public class CRUDKaryawan {
         karyawan2[urutan - 1] = new Karyawan(nama, alamat, jenisKelamin, kategori, noTelp);
     }
 
-    // Helper to split a string into chunks of width w
     private List<String> wrap(String s, int w) {
         List<String> parts = new ArrayList<>();
         if (s == null)
@@ -65,7 +64,6 @@ public class CRUDKaryawan {
     }
 
     public void cetakKaryawan2() {
-        // Determine dynamic widths based on content but cap them
         int capName = 20;
         int capAlamat = 20;
         int capTelp = 15;
@@ -92,14 +90,12 @@ public class CRUDKaryawan {
             }
         }
 
-        // fixed widths for number and jk
         int noW = 4;
         jkW = Math.max(jkW, 6);
 
         String sep = "+" + repeat('-', noW) + "+" + repeat('-', nameW + 2) + "+" + repeat('-', alamatW + 2) + "+"
                 + repeat('-', telpW + 2) + "+" + repeat('-', jkW + 2) + "+" + repeat('-', kategoriW + 2) + "+";
 
-        // header
         System.out.println(sep);
         String header = "| " + padRight("No", noW - 2) + " | " + padRight("Nama", nameW) + " | "
                 + padRight("Alamat", alamatW)

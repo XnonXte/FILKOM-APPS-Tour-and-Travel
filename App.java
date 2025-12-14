@@ -4,7 +4,6 @@ import aplikasi.CRUDKaryawan;
 import aplikasi.CRUDMobil;
 
 public class App {
-
     static class Booking {
         public int id;
         public String type;
@@ -153,7 +152,6 @@ public class App {
     }
 
     private static boolean verifyAdminPassword(Scanner sc) {
-        // expected hash computed from the known password "password"
         final String expectedHash = sha256("password");
         int attempts = 3;
         for (int i = 0; i < attempts; i++) {
@@ -189,7 +187,6 @@ public class App {
                 "Tulungagung - Malang"
         };
 
-        // Role selection loop (Admin or User)
         while (true) {
             System.out.println("=== Pilih Role ===");
             System.out.println("1. Admin");
@@ -201,13 +198,13 @@ public class App {
                 break;
             }
 
-            if (role == 1) { // Admin
+            if (role == 1) { 
                 if (verifyAdminPassword(sc)) {
                     adminMenu(sc, crudK, crudM, routes, bookings, mobilBooked);
                 } else {
                     System.out.println("Kembali ke pemilihan role.");
                 }
-            } else { // User
+            } else { 
                 userMenu(sc, crudM, routes, bookings, mobilBooked);
             }
         }
